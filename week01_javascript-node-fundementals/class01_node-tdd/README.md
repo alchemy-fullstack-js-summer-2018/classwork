@@ -13,6 +13,11 @@ Use NodeJS to develop JavaScript outside of the browser.
 * npm
 * Testing (mocha)
 
+## Setup
+
+* new `.eslintrc`
+* Change tab spaces to `4`
+
 ## DEMO
 
 Greeting app
