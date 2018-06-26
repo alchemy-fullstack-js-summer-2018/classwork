@@ -21,10 +21,13 @@ describe('copy file', () => {
     it('copies from source to destination', () => {
         return copyFile(source, dest)
             .then(() => {
-                return readFile(dest);
+                return Promise.all([
+                    readFile(source, 'utf8'),
+                    readFile(dest, 'utf8')
+                ]);
             })
-            .then(contents => {
-                assert.equal(contents, 'I am some data');
+            .then(([sourceContents, destContents]) => {
+                assert.equal(sourceContents, destContents);
             });
     });
 });
