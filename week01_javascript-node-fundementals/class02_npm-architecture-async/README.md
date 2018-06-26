@@ -61,3 +61,5 @@
 
 ### Demo `CoolStringifier`
 
+* ES6 Classes
+* Hold onto state
