@@ -1,8 +1,8 @@
 {
-  "name": "class04_architecture-async",
-  "version": "1.0.0",
-  "description": "## Questions and Feedback * ?",
-  "main": "event-loop.js",
+  "name": "weird-copy-coolness",
+  "version": "1.0.1",
+  "description": "Who put these things together?",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "test:mocha": "mocha --reporter mocha-better-spec-reporter",
@@ -12,12 +12,12 @@
   "author": "Marty Nelson <marty@martypdx.com>",
   "license": "ISC",
   "dependencies": {
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "eslint": "^5.0.1",
     "mocha": "^5.2.0",
-    "mocha-better-spec-reporter": "^3.1.0",
-    "rimraf": "^2.6.2"
+    "mocha-better-spec-reporter": "^3.1.0"
   }
 }
