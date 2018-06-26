@@ -10,8 +10,8 @@
 * Write and utilize asynchronous callback functions effectively:
     * When calling node asynchronous APIs
     * When exposing a function
-* Use a class to hold onto state
 * Utilize the filesystem
+* Use a class to hold onto state
 
 ## Agenda
 
