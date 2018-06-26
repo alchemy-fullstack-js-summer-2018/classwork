@@ -11,10 +11,13 @@
   },
   "author": "Marty Nelson <marty@martypdx.com>",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  },
   "devDependencies": {
     "eslint": "^5.0.1",
     "mocha": "^5.2.0",
-    "mocha-better-spec-reporter": "^3.1.0"
+    "mocha-better-spec-reporter": "^3.1.0",
+    "rimraf": "^2.6.2"
   }
 }

@@ -5,9 +5,11 @@ const copyFile = require('../lib/copy-file');
 
 describe('copy file', () => {
     
-    const sourceFileName = 'data.txt';
+    const testDir = path.join(__dirname, 'copy-file-dir');
+    const sourceFileName = 'source.txt';
     const destFileName = 'copy.txt';
-    const dest = path.join(__dirname, 'copy-file-dir', destFileName);
+    const source = path.join(testDir, sourceFileName);
+    const dest = path.join(testDir, destFileName);
     
     beforeEach(() => {
         return unlink(dest)
@@ -17,8 +19,6 @@ describe('copy file', () => {
     });
 
     it('copies from source to destination', () => {
-        const source = path.join(__dirname, 'copy-file-dir', sourceFileName);
-        
         return copyFile(source, dest)
             .then(() => {
                 return readFile(dest);
