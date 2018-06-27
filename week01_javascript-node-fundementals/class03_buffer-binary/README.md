@@ -5,12 +5,15 @@
 * Reduce cycle time when "you don't know"
     * No one is coming to save you :(
     * You are not expected to know :)
-    * You are expected to own, be proactive, and advocate:
+    * You are expected to own it, be proactive, and advocate:
         * Narrow down the scope of what it is you don't know
         * Define what it is you need?
         * Use peers and TAs
+* Do your learning in public (within alchemy)
+    * Requisite for above items
+    * Use first 30 minutes of class
 * Remove code noise:
-    * class code left in labs
+    * Copied class code left in labs
     * Remove pseudo-code comments
 * ?
 
