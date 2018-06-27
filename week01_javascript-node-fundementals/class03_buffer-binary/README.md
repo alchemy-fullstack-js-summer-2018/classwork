@@ -15,6 +15,10 @@
 * Remove code noise:
     * Copied class code left in labs
     * Remove pseudo-code comments
+* Read your own code more (when you think you are "done")
+    * Think about what choices exist
+    * Ask for others to review
+* This is all normal...
 * ?
 
 ## Learning Objectives
