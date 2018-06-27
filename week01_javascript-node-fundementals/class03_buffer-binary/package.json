@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test:mocha": "mocha --reporter mocha-better-spec-reporter",
+    "test:mocha": "mocha test/effin-file.test.js --reporter mocha-better-spec-reporter",
     "test": "npm run test:mocha",
     "start": "npm run test:mocha -- -w"
   },
