@@ -2,9 +2,11 @@
 
 ## Questions and Feedback
 
-* Reduce cycle time when "you don't know"
+* This is all normal (and [it works](grads.png))...
+* Improving pace: reduce cycle time when "you don't know"
     * No one is coming to save you :(
     * You are not expected to know :)
+    * Your insights ("not knowings") are valuable!
     * You are expected to own it, be proactive, and advocate:
         * Narrow down the scope of what it is you don't know
         * Define what it is you need?
@@ -18,7 +20,6 @@
 * Read your own code more (when you think you are "done")
     * Think about what choices exist
     * Ask for others to review
-* This is all normal...
 * ?
 
 ## Learning Objectives
