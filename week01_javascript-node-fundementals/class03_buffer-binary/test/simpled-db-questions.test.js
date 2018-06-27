@@ -1,9 +1,11 @@
+/* eslint-disable */
 
 const pseudoStore = {
     save(object) {
         // add an id;
 
         // do file write
+        fileWrite(/*...*/)
             .then(() => {
                 return object;
             })
