@@ -1,0 +1,21 @@
+{
+  "name": "buffer-demos",
+  "version": "1.0.0",
+  "description": "Showing buffer stuff",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test:mocha": "mocha --reporter mocha-better-spec-reporter",
+    "test": "npm run test:mocha",
+    "start": "npm run test:mocha -- -w"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^5.2.0",
+    "mocha-better-spec-reporter": "^3.1.0",
+    "rimraf": "^2.6.2"
+  }
+}
