@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "//pretest": "npm run lint",
-    "test": "mocha",
-    "start": "npm run test -- -w"
+    "pretest": "npm run lint",
+    "test:run": "mocha",
+    "test": "npm run test:run",
+    "test:dev": "npm run test:run -- -w",
+    "start": "node server.js"
   },
   "author": "Marty Nelson <marty@martypdx.com>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "mocha": "^4.1.0"
+    "eslint": "^5.1.0",
+    "mocha": "^5.2.0"
   }
 }

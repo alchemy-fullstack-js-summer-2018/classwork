@@ -1,8 +1,0 @@
-README.md
-_preflight
-client.js
-dir.txt
-lib
-package-lock.json
-package.json
-test

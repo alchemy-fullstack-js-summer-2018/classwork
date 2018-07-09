@@ -15,7 +15,7 @@ const socket = net.connect(15678, () => {
     });
     
     socket.on('data', data => {
-        console.log('server sez:', data);
+        console.log(/*'server sez:', */ data);
     });
 
     socket.on('close', () => {

@@ -1,21 +1,21 @@
 const net = require('net');
+const Clients = require('./clients');
+const processMessage = require('./processMessage');
 
-const server = net.createServer(client => {
-    console.log('client connected!');
+const clients = new Clients();
+
+module.exports = net.createServer(client => {
     client.setEncoding('utf8');
+    clients.add(client);
     
-    client.write('hello client!');
-
-
-    client.on('data', data => {
-        console.log('client sez:', data);
-        client.write('thanks for the message!');
+    client.on('end', () => {
+        clients.remove(client);
     });
 
-    client.on('end', () => {
-        console.log('client left');
-    })
+    client.on('data', data => {
+        const message = `${client.username}: ${processMessage(data)}`;
+        clients
+            .getBroadcastClients(client)
+            .forEach(c => c.write(message));
+    });
 });
-
-// we won't do this:
-server.listen(15678);
