@@ -23,7 +23,7 @@
 
 An envelop with a letter (or a postcard)
 
-* [ Http Protocol explained ](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
+* [Http Protocol explained](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
 * Path (nouns):
 	* [parts of url](http://bl.ocks.org/abernier/3070589)
 	* protocol
