@@ -1,0 +1,23 @@
+{
+  "name": "node-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "mocha": "mocha",
+    "test": "npm run mocha",
+    "test:watch": "npm run mocha -- -w",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.0"
+  },
+  "dependencies": {}
+}
