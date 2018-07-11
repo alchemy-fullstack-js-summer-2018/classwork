@@ -1,0 +1,32 @@
+{
+  "name": "http-routing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "mocha": "mocha",
+    "test": "npm run mocha",
+    "test:watch": "nodemon --exec 'npm run mocha -s'",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js",
+    "db:create": "node db/create-db.js",
+    "db:load": "node db/load-db.js",
+    "db:drop": "node db/drop-tables",
+    "db:all": "npm run db:drop && npm run db:create && npm run db:load"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^5.1.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "pg": "^7.4.1"
+  }
+}
