@@ -5,6 +5,8 @@ const superPet = {
     name: 'super pet'
 };
 
+const things = [];
+
 module.exports = (req, res) => {
     // use node's built in url parser
     const url = parse(req.url, true);     

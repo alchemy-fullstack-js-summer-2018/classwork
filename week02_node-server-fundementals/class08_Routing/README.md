@@ -1,7 +1,7 @@
 # Class 08 Routes
 
 ## Questions, Feedback
-* TA?: add `npm-debug.log` to `.gitignore`
+
 * ?
 	
 ## Today's Learning Objectives
@@ -25,7 +25,7 @@ method | path
 ### Parsing Routes
 
 1. Method then Resource, or
-1. **Resource then Method**
+1. Resource then Method
 
 ### Dictionary/Map
 

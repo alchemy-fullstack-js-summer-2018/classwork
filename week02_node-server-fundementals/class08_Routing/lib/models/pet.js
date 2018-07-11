@@ -1,6 +1,9 @@
 const client = require('../db-client');
 
 module.exports = {
+    select(id) {
+        return id ? this.selectOne(id) : this.selectAll();
+    },
     selectAll() {
         return client.query('SELECT * FROM PETS')
             .then(({ rows }) => rows);
@@ -33,9 +36,10 @@ module.exports = {
                 color = $2, 
                 category_id = $3, 
                 description = $4
+            WHERE id = $5
             RETURNING *;
         `,
-        [pet.name, pet.color, pet.category_id, pet.description]
+        [pet.name, pet.color, pet.category_id, pet.description, pet.id]
         ).then(({ rows }) => rows[0]);       
     },
     delete(id) {
