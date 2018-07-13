@@ -8,24 +8,41 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 const url = 'mongodb://localhost:27017/test';
 let client = null;
-MongoClient.connect(url)
+MongoClient.connect(url, { useNewUrlParser: true })
     .then(_client => {
         client = _client;
         const db = client.db();
         return db.collection('unicorns')
-            .find()        
-            .toArray();
-        // .insert({ name: 'goldy' });
-        // .update({
-        //     _id: ObjectId('5acfd74b3533f3c47a974620')
-        // }, {
-        //     $set: {
-        //         favoriteToy: 'sparkle maker'
-        //     }
-        // })
-        // .remove({
-        //     _id : ObjectId('5acfd80c3533f3c47a974621')
-        // });
+            // FIND:
+            // .find()        
+            // .toArray();
+
+            // INSERT:
+            // .insert({ name: 'pinkycorn' })
+            // .then(result => result.ops[0]);
+
+            // UPDATE:
+            // .update(
+            //     // query:
+            //     {
+            //         _id: ObjectId('5b47d224fd84c6dfabce1e46')
+            //     }, 
+            //     // values to update:
+            //     {
+            //         $set: {
+            //             favoriteToy: 'party maker'
+            //         }
+            //     },
+            //     // options:
+            //     {
+                    
+            //     }
+            // );
+
+            // REMOVE
+            .remove({
+                _id : ObjectId('5b47d224fd84c6dfabce1e46')
+            });
     })
     .then(unicorns => {
         console.log(

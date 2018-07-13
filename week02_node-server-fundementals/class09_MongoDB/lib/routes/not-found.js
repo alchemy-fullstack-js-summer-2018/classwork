@@ -1,7 +1,6 @@
-module.exports = (req, res) => {
-    res.statusCode = 404;
-    res.send({
-        error: true,
+module.exports = req => {
+    return Promise.reject({
+        statusCode: 404,
         message: `Cannot ${req.method} ${req.url}`
     });
 };

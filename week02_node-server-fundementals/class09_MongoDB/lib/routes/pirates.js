@@ -1,34 +1,16 @@
 const notFound = require('./not-found');
 const Pirate = require('../models/pirate');
 
-const get = (req, res) => {
-    const id = req.id;
-    id ? getOne(id, req, res) : getAll(req, res);
-};
-
-const getOne = (id, req, res) => {
-    
-};
-
-const getAll = (req, res) => {
-    
-};
-
-const post = (req, res) => {
-    
-};
-
-const put = (req, res) => {
-    
-};
-
-const del = (req, res) => {
-    
-};
+const get = ({ id }) => id ? getOne(id) : getAll();
+const getOne = id => Pirate.findOne(id);
+const getAll = () => Pirate.find({});
+const post = req => Pirate.insert(req.body);
+const put = req => Pirate.update(req.body);
+const del = req => Pirate.remove(req.id).then(() => ({ removed: true }));
 
 const methods = { get, post, put, delete: del };
 
 module.exports = (req, res) => {
     const method = methods[req.method.toLowerCase()] || notFound;
-    method(req, res);
+    return method(req, res);
 };

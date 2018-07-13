@@ -2,8 +2,7 @@ Class 09 MongoDB
 ===
 
 ## Questions and Issues?
-    * Lightning Talks for second half
-
+* Lightning Talks for second half
 * ?
 
 ## Upcoming
