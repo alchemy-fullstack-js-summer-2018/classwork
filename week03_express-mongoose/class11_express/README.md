@@ -1,8 +1,7 @@
-# Class 06 EventEmitters and Streams
+# Class 11 Express
 
 ## Questions and Issues?
 
-* Welcome to Express!
 * Feedback
 	* BC 2 Final Project _will be graded_ (sorry!)
 	* Toolset Model
@@ -11,6 +10,8 @@
 			* http/mongodb
 		* Asynchronous JS and Function Passing
 		* [JavaScript Basics](https://github.com/alchemycodelab/javascript-career-track-prerequisites)
+* Welcome to Express!
+	* Review week module
 * Making a template
 * ?
 
@@ -55,15 +56,7 @@
 	* `express.Router()`
 * express Router
 	* externalize routes to own file
+	* BONUS: `router.param`
 * project structure
 	* don't use one huge app.js file!
 	* Food for thought: express generator
-
-### Spread Operator `...`
-
-* Shorthand for `Object.assign`
-* Works for maps into arrays
-
-### Error Handling
-
-_Time permitting_

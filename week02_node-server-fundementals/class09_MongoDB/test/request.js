@@ -7,6 +7,8 @@ const app = require('../lib/app');
 const server = createServer(app);
 const request = chai.request(server).keepOpen();
 
-after(done => server.close(done));
+after(done => {
+    server.close(done);
+});
 
 module.exports = request;
