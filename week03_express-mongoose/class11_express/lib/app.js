@@ -1,30 +1,17 @@
 const express = require('express');
 const app = express();
 
-// // Common "Middleware":
-// const path = require('path');
-// const publicDir = path.resolve(__dirname, '../public');
-// app.use(express.static(publicDir));
-// app.use(express.json());
+// Common "Middleware":
+const path = require('path');
+const publicDir = path.resolve(__dirname, '../public');
+// will try and serve GET path as a file from public
+app.use(express.static(publicDir));
+// read the request body and put onto req.body
+app.use(express.json());
 
+// add routes:
 
-app.use('/goodbye', (req, res) => {
-    res.send('goodbye world!');
-});
-
-app.get('/hello', (req, res) => {
-    console.log(req.query);
-    res.json('Get to hello world!');
-});
-
-app.get('/hello/:one/:two/:three', (req, res) => {
-    const { one, two, three } = req.params;
-    console.log(one, two, three);
-    res.json('Get to hello with id');
-});
-
-app.post('/hello', (req, res) => {
-    res.json({ message: 'post to hello world!' });
-});
+const pirate = require('./routes/pirates');
+app.use('/api/pirates', pirate);
 
 module.exports = app;
