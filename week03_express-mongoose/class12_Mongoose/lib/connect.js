@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 
 module.exports = function(dbUri) {
     
-    const promise = mongoose.connect(dbUri);
+    mongoose.connect(dbUri, { useNewUrlParser: true });
     
     // CONNECTION EVENTS
+    
     // Success
     mongoose.connection.on('connected',  () => {  
         console.log('Mongoose default connection open to ' + dbUri);
@@ -28,6 +29,4 @@ module.exports = function(dbUri) {
             process.exit(0); 
         }); 
     });
-
-    return promise;
 };

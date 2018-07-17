@@ -1,5 +1,5 @@
-require('dotenv').config({ path: './test/.env' });
-require('../lib/connect');
+const connect = require('../../lib/connect');
+connect('mongodb://localhost:27017/pirates_test');
 const mongoose = require('mongoose');
 
 after(() => {

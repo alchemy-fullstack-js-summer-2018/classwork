@@ -11,7 +11,7 @@ app.use(express.json());
 
 // add routes:
 
-const pirate = require('./routes/pirates');
-app.use('/api/pirates', pirate);
+const pirate = require('./routes/companies');
+app.use('/api/companies', pirate);
 
 module.exports = app;

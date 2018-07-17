@@ -31,7 +31,7 @@ Survey today's expected outcome
 	* **DEMO 1**: Testing model validation
     * **EXERCISE 2**: Tested model validation
 * Consuming models in routes
-    * Connecting - look at in class example
+    * Connecting - `mongoose.connect`, but look at in class example for more complete file
     * Differences from raw mongodb drivers:
         * Use `mongoose` in requires and for creating the connection
         * No `ObjectID` required
