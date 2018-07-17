@@ -5,8 +5,8 @@
 * ?
 
 ## Today's Learning Objectives
-* Learn to use mongoose to enforce data schema and
-validate data
+
+* Learn to use mongoose to enforce data schema and validate data
 
 ## Preflight
 
