@@ -38,12 +38,11 @@
 Revisit `express.static()`:    
 * What does it do if `ENOENT`?
 
-**DEMO**: `morgan`
-**EXERCISE #2**: Add morgan to see output
-
 #### Tested Middleware
 
 **DEMO**: TDD ~~Authentication~~ Cathentication middleware
+
+**DEMO**: `morgan`
 
 **EXERCISE #3**: TDD your own logger!
 

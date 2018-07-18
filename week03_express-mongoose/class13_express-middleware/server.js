@@ -1,10 +1,10 @@
 /* eslint no-console: off */
 require('dotenv').config();
-const connect = require('./lib/mongodb');
+const connect = require('./lib/connect');
 const { createServer } = require('http');
 const app = require('./lib/app');
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27019/pirates';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pirates';
 connect(MONGODB_URI);
 
 const PORT = process.env.PORT || 3000;

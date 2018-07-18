@@ -5,7 +5,8 @@ module.exports = router
     .get('/', (req, res) => {
         Pirate.find()
             .lean()
-            .then(pirates => res.json(pirates));
+            .then(pirates => res.json(pirates))
+            .catch(console.log);
     })
 
     .get('/:id', (req, res) => {
