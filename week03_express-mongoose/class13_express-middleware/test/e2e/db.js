@@ -1,4 +1,4 @@
-const connect = require('../../lib/connect');
+const connect = require('../../lib/util/connect');
 connect('mongodb://localhost:27017/pirates_test');
 const mongoose = require('mongoose');
 

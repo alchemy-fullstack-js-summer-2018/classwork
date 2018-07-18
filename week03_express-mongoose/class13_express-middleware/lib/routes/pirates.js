@@ -1,26 +1,46 @@
 const router = require('express').Router();
 const Pirate = require('../models/pirate');
+const { HttpError } = require('../util/errors');
+
+const updateOptions = {
+    new: true,
+    runValidators: true
+};
+
+const make404 = id => new HttpError({
+    code: 404,
+    message: `No pirate with id ${id}`
+});
 
 module.exports = router
-    .get('/', (req, res) => {
+    .get('/', (req, res, next) => {
         Pirate.find()
             .lean()
             .then(pirates => res.json(pirates))
-            .catch(console.log);
+            .catch(next);
     })
 
-    .get('/:id', (req, res) => {
+    .get('/:id', (req, res, next) => {
         Pirate.findById(req.params.id)
             .lean()
-            .then(pirate => res.json(pirate));
+            .then(pirate => {
+                if(!pirate) {
+                    next(make404(req.params.id));
+                }
+                else {
+                    res.json(pirate);
+                }
+            })
+            .catch(next);
     })
 
-    .post('/', (req, res) => {
+    .post('/', (req, res, next) => {
         Pirate.create(req.body)
-            .then(company => res.json(company));
+            .then(company => res.json(company))
+            .catch(next);
     })
     
-    .put('/:id', (req, res) => {
+    .put('/:id', (req, res, next) => {
         Pirate.findByIdAndUpdate(
             req.params.id,
             req.body,
@@ -29,10 +49,54 @@ module.exports = router
                 runValidators: true
             }
         )
-            .then(pirate => res.json(pirate));
+            .then(pirate => res.json(pirate))
+            .catch(next);
     })
 
-    .delete('/:id', (req, res) => {
+    .delete('/:id', (req, res, next) => {
         Pirate.findByIdAndRemove(req.params.id)
-            .then(pirate => res.json({ removed: !!pirate }));
+            .then(pirate => res.json({ removed: !!pirate }))
+            .catch(next);
+    })
+    
+    .post('/:id/weapons', (req, res, next) => {
+        Pirate.findByIdAndUpdate(
+            req.params.id,
+            {
+                $push: {
+                    weapons: req.body
+                }
+            },
+            updateOptions
+        )
+            .then(pirate => {
+                if(!pirate) {
+                    next(make404(req.params.id));
+                }
+                else {
+                    res.json(pirate.weapons[pirate.weapons.length - 1]);
+                }
+            })
+            .catch(next);
+    })
+    
+    .delete('/:id/weapons/:weaponId', (req, res, next) => {
+        Pirate.findByIdAndUpdate(
+            req.params.id,
+            {
+                $pull: {
+                    weapons: { _id: req.params.weaponId }
+                }
+            },
+            updateOptions
+        )
+            .then(pirate => {
+                if(!pirate) {
+                    next(make404(req.params.id));
+                }
+                else {
+                    res.json({ removed: true });
+                }
+            })
+            .catch(next);
     });

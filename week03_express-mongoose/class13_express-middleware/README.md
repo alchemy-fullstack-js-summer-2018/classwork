@@ -77,7 +77,13 @@ Revisit `express.static()`:
 ##### Sources
 
 * Explicitly thrown
+    * We need 400 level code
+        * 404 on id
+        * 400 on Bad Request
+    * Mongoose Validation errors
+        * "Massage" to be relvent
 * Unhandled Promise rejections
+    * 500
 
 **DEMO/EXERCISE** Mob Program and Error Handler
 

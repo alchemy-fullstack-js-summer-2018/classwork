@@ -1,3 +1,4 @@
+const { HttpError } = require('./errors');
 
 module.exports = function createCathentication(password = 'meow') {
 
@@ -6,7 +7,12 @@ module.exports = function createCathentication(password = 'meow') {
             next();
         }
         else {
-            res.sendStatus(401);
+            const error = new HttpError({
+                code: 401,
+                message: 'Unauthorized'
+            });
+
+            next(error);
         }
     };
 };

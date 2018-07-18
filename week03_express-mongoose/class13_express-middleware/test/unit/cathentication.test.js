@@ -1,5 +1,6 @@
 const { assert } = require('chai');
-const createCathentication = require('../../lib/create-cathentication');
+const createCathentication = require('../../lib/util/create-cathentication');
+const { HttpError } = require('../../lib/util/errors');
 
 describe('cathentication middleware', () => {
 
@@ -41,22 +42,16 @@ describe('cathentication middleware', () => {
             }
         };
 
-        const res = {
-            sendStatus(code) {
-                this.code = code;
-            }
-        };
-
-        let called = false;
-        const next = () => called = true;
+        const next = error => next.error = error;
 
         // simulate express calling our middleware function
-        authMiddleware(req, res, next);
+        authMiddleware(req, null, next);
         
         // statusCode send of 401
-        assert.equal(res.code, 401);
+        const { error } = next;
+        assert.instanceOf(error, HttpError);
+        assert.equal(error.code, 401);
+        assert.deepEqual(error.message, 'Unauthorized');
 
-        // assertions
-        assert.equal(called, false);
     });
 });
