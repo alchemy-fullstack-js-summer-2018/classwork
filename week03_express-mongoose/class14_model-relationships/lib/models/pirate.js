@@ -6,6 +6,10 @@ const schema = new Schema({
         type: String,
         required: true
     },
+    crew: {
+        type: Schema.Types.ObjectId,
+        ref: 'Crew'
+    },
     weapons: [{
         name: {
             type: String,

@@ -10,8 +10,12 @@ app.use(express.json());
 
 // routes
 const pirates = require('./routes/pirates');
+const crews = require('./routes/crews');
+const weapons = require('./routes/weapons');
 
 app.use('/api/pirates', pirates);
+app.use('/api/crews', crews);
+app.use('/api/weapons', weapons);
 
 const { handler, api404 } = require('./util/errors');
 

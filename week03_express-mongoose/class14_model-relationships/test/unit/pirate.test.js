@@ -1,4 +1,5 @@
 const { assert } = require('chai');
+const { Types } = require('mongoose');
 const { getErrors } = require('./helpers');
 const Pirate = require('../../lib/models/pirate');
 
@@ -7,6 +8,7 @@ describe('Pirate model', () => {
     it('validates good model', () => {
         const data = {
             name: 'Ronona',
+            crew: Types.ObjectId(),
             weapons: [{
                 name: 'Wado Ichimonji',
                 type: 'sword',
@@ -50,8 +52,9 @@ describe('Pirate model', () => {
         assert.equal(errors['weapons.0.type'].kind, 'required'); 
         assert.equal(errors['weapons.0.damage'].kind, 'required'); 
     });
-    // NOTE: mongoose won't validate multipl array items
 
+    // NOTE: mongoose won't validate multiple array items, so we 
+    // test them one at a time.
     it('weapon damage min 1', () => {
         const pirate = new Pirate({
             name: 'pirate',

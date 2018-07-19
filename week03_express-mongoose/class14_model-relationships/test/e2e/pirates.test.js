@@ -2,10 +2,7 @@ const { assert } = require('chai');
 const request = require('./request');
 const { dropCollection } = require('./db');
 
-const checkOk = res => {
-    assert.equal(res.status, 200, 'expected 200 http status code');
-    return res;
-};
+const { checkOk } = request;
 
 describe('Pirates API', () => {
 
