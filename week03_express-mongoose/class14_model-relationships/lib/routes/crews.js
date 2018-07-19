@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Crew = require('../models/crew');
+const Pirate = require('../models/pirate');
 const { HttpError } = require('../util/errors');
 
 const updateOptions = {
@@ -16,19 +17,26 @@ module.exports = router
     .get('/', (req, res, next) => {
         Crew.find()
             .lean()
-            .populate('weapons.weapon')
             .then(crews => res.json(crews))
             .catch(next);
     })
 
     .get('/:id', (req, res, next) => {
-        Crew.findById(req.params.id)
-            .lean()
-            .then(crew => {
+
+        Promise.all([
+            Crew.findById(req.params.id)
+                .lean(),
+            Pirate
+                .find({ crew: req.params.id })
+                .lean()
+                .select('name')
+        ])
+            .then(([crew, pirates]) => {
                 if(!crew) {
                     next(make404(req.params.id));
                 }
                 else {
+                    crew.pirates = pirates;
                     res.json(crew);
                 }
             })
