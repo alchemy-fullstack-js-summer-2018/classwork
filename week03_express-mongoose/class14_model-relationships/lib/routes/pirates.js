@@ -16,6 +16,15 @@ module.exports = router
     .get('/', (req, res, next) => {
         Pirate.find()
             .lean()
+            .select('name')
+            .populate({
+                path: 'crew',
+                select: 'name',
+                populate: {
+                    path: 'ships',
+                    select: 'name masts'
+                }
+            })
             .then(pirates => res.json(pirates))
             .catch(next);
     })
@@ -36,7 +45,7 @@ module.exports = router
 
     .post('/', (req, res, next) => {
         Pirate.create(req.body)
-            .then(company => res.json(company))
+            .then(pirate => res.json(pirate))
             .catch(next);
     })
     

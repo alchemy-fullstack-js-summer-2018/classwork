@@ -1,8 +1,8 @@
 const http = require('http');
 const app = require('./lib/app');
-// const connect = require('./lib/connect');
+const connect = require('./lib/util/connect');
 
-// connect();
+connect('mongodb://localhost:27017/pirates_test');
 
 const server = http.createServer(app);
 const port = process.env.port || 3000;
