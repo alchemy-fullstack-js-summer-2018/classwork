@@ -6,7 +6,21 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    flag: String
+    flag: String,
+    weapons: [{
+        weapon: {
+            type: Schema.Types.ObjectId,
+            ref: 'Weapon'
+        },
+        stolen: {
+            type: Schema.Types.ObjectId,
+            ref: 'Crew'
+        },
+        cursed: {
+            type: Boolean,
+            default: false
+        }
+    }]
 });
 
 module.exports = mongoose.model('Crew', schema);

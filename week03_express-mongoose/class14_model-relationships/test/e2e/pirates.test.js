@@ -49,6 +49,23 @@ describe('Pirates API', () => {
             });
     });
 
+    const makeSimple = (pirate, crew) => {
+        const simple = {
+            _id: pirate._id,
+            name: pirate.name,
+        };
+
+        if(crew) {
+            simple.crew = {
+                _id: crew._id,
+                name: crew.name
+            };
+        }
+
+        return simple;
+
+    };
+
     it('gets a list of pirates', () => {
         let zoro;
         return save({ name: 'Ronona Zoro' })
@@ -58,7 +75,10 @@ describe('Pirates API', () => {
             })
             .then(checkOk)
             .then(({ body }) => {
-                assert.deepEqual(body, [luffy, zoro]);
+                assert.deepEqual(body, [
+                    makeSimple(luffy, strawHats), 
+                    makeSimple(zoro)
+                ]);
             });
     });
 

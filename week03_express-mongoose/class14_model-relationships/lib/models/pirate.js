@@ -11,20 +11,8 @@ const schema = new Schema({
         ref: 'Crew'
     },
     weapons: [{
-        name: {
-            type: String,
-            required: true
-        },
-        type: {
-            type: String,
-            required: true
-        },
-        damage: {
-            type: Number,
-            min: 1,
-            max: 25,
-            required: true
-        }
+        type: Schema.Types.ObjectId,
+        ref: 'Weapon'    
     }]
 });
 

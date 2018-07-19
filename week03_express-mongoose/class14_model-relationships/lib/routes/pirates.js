@@ -19,11 +19,7 @@ module.exports = router
             .select('name')
             .populate({
                 path: 'crew',
-                select: 'name',
-                populate: {
-                    path: 'ships',
-                    select: 'name masts'
-                }
+                select: 'name'
             })
             .then(pirates => res.json(pirates))
             .catch(next);
@@ -32,6 +28,11 @@ module.exports = router
     .get('/:id', (req, res, next) => {
         Pirate.findById(req.params.id)
             .lean()
+            .populate({
+                path: 'crew',
+                select: 'name'
+            })
+            .populate('weapons')
             .then(pirate => {
                 if(!pirate) {
                     next(make404(req.params.id));

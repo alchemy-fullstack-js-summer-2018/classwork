@@ -16,6 +16,7 @@ module.exports = router
     .get('/', (req, res, next) => {
         Crew.find()
             .lean()
+            .populate('weapons.weapon')
             .then(crews => res.json(crews))
             .catch(next);
     })
