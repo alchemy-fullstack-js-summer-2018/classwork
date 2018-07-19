@@ -1,0 +1,34 @@
+{
+  "name": "model-relations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run test:run",
+    "test:run": "mocha --recursive",
+    "test:unit": "npm run test:run -- ./test/unit",
+    "test:e2e": "npm run test:run -- ./test/e2e",
+    "test:watch": "nodemon --exec 'npm run -s test:run'",
+    "test:unit:watch": "nodemon --exec 'npm run -s test:unit'",
+    "test:e2e:watch": "nodemon --exec 'npm run -s test:e2e'",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^5.1.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.2"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0"
+  }
+}
