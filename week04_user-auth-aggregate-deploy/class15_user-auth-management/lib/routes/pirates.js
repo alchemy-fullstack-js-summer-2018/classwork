@@ -41,6 +41,24 @@ module.exports = router
             .catch(next);
     })
     
+    // example route checking ownership, with override for admin
+    // .put('/:id', (req, res, next) => {
+    //     const isAdmin = req.user.roles.includes('admin');
+    //     const query = { _id: req.params.id };
+    //     if(!isAdmin) query.owner = req.user.id;
+
+    //     Pirate.findOneAndUpdate(
+    //         query,
+    //         req.body,
+    //         {
+    //             new: true,
+    //             runValidators: true
+    //         }
+    //     )
+    //         .then(pirate => res.json(pirate))
+    //         .catch(next);
+    // })
+    
     .put('/:id', (req, res, next) => {
         Pirate.findByIdAndUpdate(
             req.params.id,

@@ -21,7 +21,11 @@ const schema = new Schema({
             max: 25,
             required: true
         }
-    }]
+    }],
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 module.exports = mongoose.model('Pirate', schema);

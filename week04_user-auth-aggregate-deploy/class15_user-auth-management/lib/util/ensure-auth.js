@@ -8,6 +8,7 @@ module.exports = function createEnsureAuth() {
         tokenService.verify(token)
             .then(payload => {
                 req.user = payload;
+                req.user.isAdmin = req.user.roles.includes('admin');
                 next();
             })
             .catch(() => {
