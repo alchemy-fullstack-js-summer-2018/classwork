@@ -68,4 +68,7 @@ directly, often done via `.textContent` of wrapping element);
 
 ## Lab
 
-Review today's lab
+* Set user settings tab size to `2`
+* Use updated `.eslintrc`
+
+Review today's lab...
