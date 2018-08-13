@@ -2,6 +2,10 @@
 
 ![bttfe](back-to-front-end.jpg)
 
+## Misc
+
+**Friday class in AM**
+
 ## Agenda 
 
 * Backend Review
