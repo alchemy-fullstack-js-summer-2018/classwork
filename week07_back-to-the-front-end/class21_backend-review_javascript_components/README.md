@@ -6,7 +6,7 @@ Excellent commitment and execution:
 
 > Being a software developer means doing what you can with the knowledge and resources you have available to you
 
-Mostly high-level design and architecture issues
+Mostly [high-level design and architecture issues](mid-project-review.md)
 
 ## Commitment
 
