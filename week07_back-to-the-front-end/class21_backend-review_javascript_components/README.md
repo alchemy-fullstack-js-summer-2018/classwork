@@ -20,8 +20,7 @@ Commit to focus on:
 
 ### Path to the Darkside
 
-> Focusing on "getting it to work" and "knowledge acquisition" _leads to anger and frustration_. Work without regard to process and product and 
-forever will technical debt rule your destiny
+> For training, focusing on "getting it to work" and "knowledge acquisition" _leads to anger and frustration_. Work without regard to process and product and forever will technical debt rule your destiny
 
 ## JavaScript
 
