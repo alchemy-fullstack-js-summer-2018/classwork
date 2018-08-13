@@ -22,7 +22,15 @@ Commit to focus on:
 
 > For training, focusing on "getting it to work" and "knowledge acquisition" _leads to anger and frustration_. Work without regard to process and product and forever will technical debt rule your destiny
 
+## Front End Changes
+
+1. Use 2 spaces
+1. Use `camelCase` file and folder names, and `TitleCase` for files
+that export components.
+
 ## JavaScript
+
+Develop a working model of JavaScript:
 
 1. How Values are Stored
 1. How Prototypical Inheritance Works

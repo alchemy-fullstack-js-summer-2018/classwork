@@ -21,9 +21,7 @@ Fail fast, fail early!
 ### Folder/File Organization
 
 1. Logically organized
-1. Consistent naming:
-    1. `kebob-case` for folders and files
-    1. Includes a README.md
+1. Consistent file and folder naming
 
 ## Practice
 
