@@ -30,6 +30,8 @@ Fail fast, fail early!
 Growth requires lots of practice, which means lots of hands-on-keys typing.
 
 1. Use the file as a draft surface for code
+    * Idea feedback
+    * Get it out of your head
 1. Write each part of each idea as it comes. Invite the next idea:
     1. No room for idea
     ```js
