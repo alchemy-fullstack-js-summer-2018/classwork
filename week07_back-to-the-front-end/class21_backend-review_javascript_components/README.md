@@ -1,4 +1,11 @@
-# Class 21: Backend Review, JavaScript Foundations, The DOM and Component Architectures
+# Class 21: Back to the Front End
+
+## Agenda 
+
+* Backend Review
+* JavaScript Foundations
+* The DOM
+* Component Architectures
 
 ## Backend Review
 
