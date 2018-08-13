@@ -1,0 +1,20 @@
+{
+  "name": "class21_backend-review_javascript_components",
+  "version": "1.0.0",
+  "description": "Excellent commitment and execution:",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run jest",
+    "jest": "jest",
+    "test:watch": "npm run jest -- --watch"
+  },
+  "keywords": [],
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "jest": "^23.5.0"
+  }
+}
