@@ -51,8 +51,8 @@ Develop a working model of JavaScript:
 
 There are three kinds of DOM changes:
 
-1. Changing the value of text nodes (often done via `.textContent` of 
-wrapping element);
+1. Changing the value of text nodes (done via `.data` on a text node
+directly, often done via `.textContent` of wrapping element);
 1. Setting a property or calling a method on an element
     * `el.disabled = true`
     * `el.classList.add('showing');`
