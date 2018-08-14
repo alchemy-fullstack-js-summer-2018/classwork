@@ -1,0 +1,13 @@
+:local(.app) {
+
+  pre {
+    margin: 0;
+    display: inline-block;
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    background: steelblue;
+  }
+
+}
