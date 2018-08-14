@@ -1,1 +1,3 @@
-console.log('hello webpack!');
+import obj from './foo';
+
+console.log('hello webpack', obj.name);

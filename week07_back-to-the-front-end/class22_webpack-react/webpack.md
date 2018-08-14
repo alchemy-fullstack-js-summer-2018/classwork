@@ -54,6 +54,14 @@ Remove old bundle files by cleaning them when build
     ],
     ```
 
+### Use HTMLWebpackPlugin
+
+1. `npm i html-webpack-plugin -D`
+1. Add `HTMLPLugin` to `webpack.config.js`
+1. Add `index.html` to `src` that has an `id="root"` target element
+1. Change config of `HTMLPlugin` to use that file
+1. Restart and verify that it works!
+
 ### Dev Server
 
 **NOTE: You will need to restart webpack _whenever_ config changes!!!**
@@ -68,14 +76,6 @@ Remove old bundle files by cleaning them when build
 1. Run `npx webpack-dev-server`
 1. Success? Add to `package.json` as `start`
 1. Commit
-
-### Use HTMLWebpackPlugin
-
-1. `npm i html-webpack-plugin -D`
-1. Add `HTMLPLugin` to `webpack.config.js`
-1. Add `index.html` to `src` that has an `id="root"` target element
-1. Change config of `HTMLPlugin` to use that file
-1. Restart and verify that it works!
 
 ### Add `babel` for ESNext
 
