@@ -1,3 +1,8 @@
-import obj from './foo';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log('hello webpack', obj.name);
+ReactDOM.render(
+  <div>hello react!</div>,
+  document.getElementById('root')
+);
+

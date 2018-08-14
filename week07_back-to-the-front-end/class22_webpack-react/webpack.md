@@ -57,7 +57,7 @@ Remove old bundle files by cleaning them when build
 ### Use HTMLWebpackPlugin
 
 1. `npm i html-webpack-plugin -D`
-1. Add `HTMLPLugin` to `webpack.config.js`
+1. Add `HTMLPlugin` to `webpack.config.js`
 1. Add `index.html` to `src` that has an `id="root"` target element
 1. Change config of `HTMLPlugin` to use that file
 1. Restart and verify that it works!
@@ -67,7 +67,7 @@ Remove old bundle files by cleaning them when build
 **NOTE: You will need to restart webpack _whenever_ config changes!!!**
 
 1. `npm i webpack-dev-server -D`
-1. Add "build" as `devServer/contentBase` to `webpack.config.js`:
+1. Add "docs" as `devServer/contentBase` to `webpack.config.js`:
     ```js
     devServer: {
         contentBase: './docs',
@@ -99,7 +99,7 @@ devtool: 'inline-source-map',
 
 1. `npm i react react-dom`
 1. `npm i babel-preset-react -D`
-1. Add `'react'` to `.babelrc` presets
+1. Add `'react'` to options (or `.babelrc`) presets
 1. Change code to render some react jsx to `document.body`
 1. Restart and verify that it works!
 
