@@ -150,12 +150,13 @@ devtool: 'inline-source-map',
 
 ### Add `css` with style loader
 
-1. `npm i css-loader style-loader postcss-loader autoprefixer precss -D`
+1. `npm i css-loader style-loader postcss-loader autoprefixer precss postcss-import -D`
 1. Add `postcss.config.js` with autoprefixer and precess:
     ```js
     /* eslint-env node */
     module.exports = {
         plugins: [
+            require('postcss-import'),
             require('precss'),
             require('autoprefixer')
         ]
