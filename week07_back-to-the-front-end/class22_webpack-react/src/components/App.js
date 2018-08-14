@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     cowsay.list((err, cows) => {
-      this.setState({ cows })
+      this.setState({ cows });
     });
   }
 
@@ -29,14 +29,14 @@ class App extends Component {
 
   handleBackgroundChoose = (url = '') => {
     this.setState({ url });
-  }
+  };
 
   handleExport = () => {
     dom2image.toBlob(this.image)
       .then(blob => {
         fileSaver.saveAs(blob, 'cute-cowsay.png');
       });
-  }
+  };
 
   render() { 
     const { content, cows, cow, url } = this.state;
@@ -74,7 +74,7 @@ function CowSay({ content, cow, url }) {
 
   return (
     <Fragment>
-      <pre style={{ background: `url(${url})`}}>{cowSaid}</pre>
+      <pre style={{ background: `url(${url})` }}>{cowSaid}</pre>
     </Fragment>
   );
 }
