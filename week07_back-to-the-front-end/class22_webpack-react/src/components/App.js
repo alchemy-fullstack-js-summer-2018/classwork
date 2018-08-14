@@ -7,16 +7,15 @@ import styles from './App.css';
 class App extends Component {
 
   state = {
-    counter: 0,
     content: 'Hellloooo!',
     cows: [],
     cow: 'default',
     url: 'https://atlantisbahamas.com/media/Things%20To%20Do/Water%20Park/Beaches/Widget/Beaches_CoveBeach.jpg'
-  }
+  };
 
   componentDidMount() {
     cowsay.list((err, cows) => {
-      this.setState({ cows });
+      this.setState({ cows })
     });
   }
 
