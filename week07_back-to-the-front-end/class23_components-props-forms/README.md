@@ -1,13 +1,12 @@
 Frontend 02: Tooling (Webpack) and React
 ===
 
-## Learning Objectives
-
 ## Agenda
 
-* Modern Frontend Development
-* Build System with Webpack
-* Intro to React
+* Passing Props
+* Validating Props with PropTypes
+* Testing Components
+* Integrating API service
 
 ## Instantiate a React Component (Birds and the Bees of Parent/Child Components)
 
@@ -31,7 +30,7 @@ const myComponent = new MyComponent({
 
 ### But...
 
-* Components are not "re"-rendered just because prop/state changes
+* Components are not "re"-created just because prop/state changes
 * You can control with `key` if necessary
 
 ## State and Props
@@ -89,9 +88,11 @@ In `package.json` add the following scripts:
 
 ```json
   "scripts": {
-    
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run jest",
+    "jest": "jest",
+    "test:watch": "npm run jest -- --watch"
   },
 ```
 
