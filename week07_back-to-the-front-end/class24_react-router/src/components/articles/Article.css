@@ -1,13 +1,24 @@
 :local(.article) {
   list-style: none;
-
-  p.image {
-    position: relative;
-    height: 200px;
-    text-align: center;
+  position: relative;
+  overflow: hidden;
+  
+  margin: 10px;
+  background: #eee;
+  border: 1px solid #aaa;
     
-    img {
-      height: 100%;
+  img {
+    width: 150px;
+    height: auto;
+    float: left;
+  }
+
+  .content {
+    margin-left: 155px;
+    h2 {
+      margin-top: 2px;
+      margin-bottom: 0px;
     }
   }
+  
 }

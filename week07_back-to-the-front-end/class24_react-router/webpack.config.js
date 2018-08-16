@@ -13,13 +13,14 @@ module.exports = {
   output: {
     path,
     filename: 'bundle.[hash].js',
-    publicPath: ''
+    publicPath: '/'
   },
   // mode (will eventually be cmd line arg in package.json scripts)
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: `./${buildDir}`,
+    historyApiFallback: true,
   },
   plugins: [
     // add plugins

@@ -1,11 +1,8 @@
-import { put } from './request';
+import { post } from './request';
 
 const URL = 'https://todo-9ea8e.firebaseio.com';
-// const FAVORITES_URL = `${URL}/favorites.json`;
+const FAVORITES_URL = `${URL}/favorites.json`;
 
-const getFavoriteUrl = id => `${URL}/favorites/${id}.json`;
+// const getFavoriteUrl = id => `${URL}/favorites/${id}.json`;
 
-export const addFavorite =  favorite => put(
-  getFavoriteUrl(favorite), 
-  true
-);
+export const addFavorite =  favorite => post(FAVORITES_URL, favorite);

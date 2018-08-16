@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Search from './search/Search';
+import { Link, Route } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import styles from './Header.css';
 
 class Header extends Component {
 
-  static propTypes = {
-    onSearch: PropTypes.func.isRequired
+  handleSpecial = event => {
+    event.preventDefault();
+    alert('that link is so special!');
   };
 
   render() {
-    const { onSearch } = this.props;
 
     return (
       <div className={styles.header}>
 
         <section className="header-container">
-          <img src={logo}/>
-          <h1>News Search</h1>
+          <div className="logo">
+            <img src={logo}/>
+            <h1>News Search</h1>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/search">Search</Link>
+              </li>
+              <Route path="/search" render={() => (
+                <li>
+                  <Link to="#" onClick={this.handleSpecial}>Special</Link>
+                </li>
+              )}/>
+            </ul>
+          </nav>
         </section>
       
         <section className="search-container">
-          <Search onSearch={onSearch}/>
+          <Route component={Search}/>
         </section>
       
       </div>

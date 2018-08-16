@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Article.css';
+import logo from '../../assets/logo.png';
 
 export default class Article extends Component {
 
@@ -15,24 +16,20 @@ export default class Article extends Component {
 
     return (
       <li className={styles.article}>
-        
-        <h2>{title}</h2>
-        <p>by {author} on {new Date(publishedAt).toLocaleString()}</p>
-        <p>
-          <a href={url} 
-            target="_blank" 
-            rel="noopener noreferrer">
-            view article
-          </a>
-        </p>
+        <img src={urlToImage || logo}/>
+        <div className="content">
+          <h2>
+            <a href={url} 
+              target="_blank" 
+              rel="noopener noreferrer">
+              {title}
+            </a>
+          </h2>
+          <p>by {author} on {new Date(publishedAt).toLocaleString()}</p>
+          <p>{description}</p>
+        </div>
 
-        <p>{description}</p>
 
-        {urlToImage && 
-          <p className="image">
-            <img src={urlToImage}/>
-          </p>
-        }
       </li>
     );
   }

@@ -5,6 +5,12 @@
   .header-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
   
     > h1 {
       font-size: 14pt;
@@ -15,5 +21,18 @@
 
   .search-container {
     padding: 5px 0;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+  
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 5px;
+    }
   }
 }
