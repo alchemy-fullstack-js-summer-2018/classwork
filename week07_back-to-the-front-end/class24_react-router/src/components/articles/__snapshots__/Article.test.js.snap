@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article renders as designed 1`] = `
+<li
+  className="article"
+>
+  <h2>
+    ‘It’ll Happen Anyway’: Andreas Antonopoulos Criticizes Bitcoin ETFs
+  </h2>
+  <p>
+    by 
+    Wilma Woo
+     on 
+    8/15/2018, 2:00:04 PM
+  </p>
+  <p>
+    <a
+      href="https://bitcoinist.com/andreas-antonopoulos-criticizes-bitcoin-etfs/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      view article
+    </a>
+  </p>
+  <p>
+    Exchange-traded funds (ETFs) “fundamentally undermine the underlying principle of peer-to-peer money,” Andreas Antonopoulos claimed, adopting a critical stance on the financial instrument. ‘Not Your Keys – Not Your Bitcoin’ As part of his monthly Q&A session …
+  </p>
+  <p
+    className="image"
+  >
+    <img
+      src="https://bitcoinist.com/wp-content/uploads/2018/03/wc-antonopoulos.jpg"
+    />
+  </p>
+</li>
+`;
+
+exports[`Article renders without image 1`] = `
+<li
+  className="article"
+>
+  <h2>
+    ‘It’ll Happen Anyway’: Andreas Antonopoulos Criticizes Bitcoin ETFs
+  </h2>
+  <p>
+    by 
+    Wilma Woo
+     on 
+    8/15/2018, 2:00:04 PM
+  </p>
+  <p>
+    <a
+      href="https://bitcoinist.com/andreas-antonopoulos-criticizes-bitcoin-etfs/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      view article
+    </a>
+  </p>
+  <p>
+    Exchange-traded funds (ETFs) “fundamentally undermine the underlying principle of peer-to-peer money,” Andreas Antonopoulos claimed, adopting a critical stance on the financial instrument. ‘Not Your Keys – Not Your Bitcoin’ As part of his monthly Q&A session …
+  </p>
+</li>
+`;

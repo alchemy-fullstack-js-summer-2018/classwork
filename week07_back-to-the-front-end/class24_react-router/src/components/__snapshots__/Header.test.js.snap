@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders as designed 1`] = `
+<div
+  className="header"
+>
+  <section
+    className="header-container"
+  >
+    <img
+      src="mock-file"
+    />
+    <h1>
+      News Search
+    </h1>
+  </section>
+  <section
+    className="search-container"
+  >
+    <Search
+      onSearch={[Function]}
+    />
+  </section>
+</div>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Articles renders as designed 1`] = `
+<ul>
+  <Article
+    article={
+      Object {
+        "id": 1,
+      }
+    }
+    key="0"
+  />
+  <Article
+    article={
+      Object {
+        "id": 2,
+      }
+    }
+    key="1"
+  />
+  <Article
+    article={
+      Object {
+        "id": 3,
+      }
+    }
+    key="2"
+  />
+</ul>
+`;

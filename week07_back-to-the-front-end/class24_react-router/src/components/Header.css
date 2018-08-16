@@ -1,0 +1,19 @@
+:local(.header) {
+  background: lightsteelblue;
+  padding: 10px;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+  
+    > h1 {
+      font-size: 14pt;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+    }
+  }
+
+  .search-container {
+    padding: 5px 0;
+  }
+}

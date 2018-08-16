@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { search as searchNews } from '../services/newsApi';
+import { addFavorite } from '../services/api';
 import Header from './Header';
 import Articles from './articles/Articles';
 import Paging from './paging/Paging';
@@ -30,6 +31,11 @@ class App extends Component {
     this.setState(paging, () => {
       this.searchNews();
     });
+  };
+
+  handleScore = () => {
+    addFavorite(12)
+      .then(console.log, console.log);
   };
 
   searchNews() {
@@ -65,6 +71,7 @@ class App extends Component {
         </header>
         
         <main>
+          <button onClick={this.handleScore}>score</button>
           {(loading || error) &&
             <section className="notifications">
               {loading && <div>Loading...</div>}
