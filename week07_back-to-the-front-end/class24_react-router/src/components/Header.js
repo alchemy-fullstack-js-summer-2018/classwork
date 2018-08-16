@@ -27,9 +27,12 @@ class Header extends Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/search">Search</Link>
+                <Link to="/favorites">Favorites</Link>
               </li>
-              <Route path="/search" render={() => (
+              <li>
+                <Link to="/articles">Search</Link>
+              </li>
+              <Route path="/articles" render={() => (
                 <li>
                   <Link to="#" onClick={this.handleSpecial}>Special</Link>
                 </li>

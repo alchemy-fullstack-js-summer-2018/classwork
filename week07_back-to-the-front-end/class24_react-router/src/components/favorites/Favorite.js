@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styles from './Article.css';
-import logo from '../../assets/logo.png';
 
 export default class Article extends Component {
 
   static propTypes = {
-    article: PropTypes.object.isRequired
+    pokemon: PropTypes.object.isRequired
   };
 
   render() {
-    const { article } = this.props;
-    const { name, url } = article;
-    const split = url.split('/');
-    const id = split[split.length - 2];
+    const { pokemon } = this.props;
+    const { id, name, image } = pokemon;
 
     return (
-      <li className={styles.article}>
+      <li>
         <Link to={`/articles/${id}`}>
           {name}
+          <img src={image}/>
         </Link>  
       </li>
     );

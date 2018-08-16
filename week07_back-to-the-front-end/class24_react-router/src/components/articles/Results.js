@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import qs from 'query-string';
 import Articles from './Articles';
 import Paging from '../paging/Paging';
-import { search as searchNews } from '../../services/newsApi';
+import { getPokemon } from '../../services/pokemonApi';
 
 class Results extends Component {
   
@@ -36,27 +36,28 @@ class Results extends Component {
     });
   };
 
-  searchTerm() {
+  get searchTerm() {
     const { location } = this.props;
     const { search } = qs.parse(location.search);
     return search;
   }
 
   searchNews() {
-    const { page, perPage } = this.state;
-    const search = this.searchTerm;
+    // const search = this.searchTerm;
 
-    if(!search) return;
+    // if(!search) return;
 
     this.setState({ 
       loading: true,
       error: null
     });
 
-    searchNews({ search }, { page, perPage })
+    getPokemon()
       .then(
-        ({ articles, totalResults }) => {
-          this.setState({ articles, totalResults });
+        ({ results }) => {
+          this.setState({ 
+            pokemon: results 
+          });
         },
         err => {
           this.setState({ error: err.message });
@@ -68,7 +69,7 @@ class Results extends Component {
   }
 
   render() { 
-    const { articles, loading, error } = this.state;
+    const { pokemon, loading, error } = this.state;
     const { page, perPage, totalResults } = this.state;
     const { searchTerm } = this;
 
@@ -93,8 +94,8 @@ class Results extends Component {
           </Fragment>
         }
 
-        {articles 
-          ? <Articles articles={articles}/>
+        {pokemon 
+          ? <Articles articles={pokemon}/>
           : <p>Please enter a search to get started</p>
         }
       </section>

@@ -1,4 +1,4 @@
-const API_KEY = '9e217382d31d48af8c3bc200cdc6ddbd';
+const API_KEY = 'eb79772934b94b4a8926ed16c7de83a7';
 const API_QUERY = `apiKey=${API_KEY}`;
 const BASE_URL = 'https://newsapi.org/v2';
 const EVERYTHING_URL = `${BASE_URL}/everything?${API_QUERY}`;
@@ -7,8 +7,20 @@ const SORT_QUERY = 'sortBy=publishedAt';
 
 const throwJson = json => { throw json; };
 
-const get = url => fetch(url)
-  .then(r => r.ok ? r.json() : r.json().then(throwJson));
+const get = url => {
+  const json = window.localStorage.getItem(url);
+  if(json) {
+    const response = JSON.parse(json);
+    return Promise.resolve(response);
+  }
+
+  return fetch(url)
+    .then(r => r.ok ? r.json() : r.json().then(throwJson))
+    .then(response => {
+      window.localStorage.setItem(url, JSON.stringify(response));
+      return response;
+    });
+};
 
 export function search({ search, sources = [] }, { page = 1, pageSize = 20 } = {}) {
   const query = `&q=${search}&sources=${sources.join()}`;
