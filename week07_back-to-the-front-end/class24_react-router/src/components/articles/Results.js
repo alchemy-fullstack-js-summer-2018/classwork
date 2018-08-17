@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import qs from 'query-string';
-import Articles from './Articles';
+import PokemonList from './PokemonList';
 import Paging from '../paging/Paging';
 import { getPokemon } from '../../services/pokemonApi';
 
@@ -95,7 +95,7 @@ class Results extends Component {
         }
 
         {pokemon 
-          ? <Articles articles={pokemon}/>
+          ? <PokemonList pokemon={pokemon}/>
           : <p>Please enter a search to get started</p>
         }
       </section>

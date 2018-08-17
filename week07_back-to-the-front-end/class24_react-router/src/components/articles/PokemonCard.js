@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styles from './Article.css';
+import styles from './PokemonCard.css';
 import logo from '../../assets/logo.png';
 
 export default class Article extends Component {
@@ -17,9 +17,10 @@ export default class Article extends Component {
     const id = split[split.length - 2];
 
     return (
-      <li className={styles.article}>
+      <li className={styles.card}>
         <Link to={`/articles/${id}`}>
-          {name}
+          <img src={`sprites/pokemon/${id}.png`}/>
+          <h3>{name}</h3>
         </Link>  
       </li>
     );
