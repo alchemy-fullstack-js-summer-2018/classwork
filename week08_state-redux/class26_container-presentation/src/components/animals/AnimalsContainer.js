@@ -1,14 +1,56 @@
 import React, { Component } from 'react';
 import Animals from './Animals';
 import AnimalForm from './AnimalForm';
+import { 
+  getAnimals, 
+  addAnimal, 
+  updateAnimal, 
+  removeAnimal } from '../../services/animalsApi';
 
 class AnimalsContainer extends Component {
+  
   state = { 
-    animals: []
+    animals: null
   };
 
-  handleComplete = animal => {
-    console.log('form add', animal);
+  componentDidMount() {
+    getAnimals()
+      .then(animals => {
+        this.setState({ animals });
+      });
+  }
+
+  handleAdd = animal => {
+    return addAnimal(animal)
+      .then(added => {
+        this.setState(({ animals }) => {
+          return {
+            animals: [...animals, added]
+          };
+        });
+      });
+  };
+
+  handleUpdate = animal => {
+    return updateAnimal(animal)
+      .then(updated => {
+        this.setState(({ animals }) => {
+          return {
+            animals: animals.map(animal => animal.key === updated.key ? updated : animal)
+          };
+        });
+      });
+  };
+
+  handleRemove = key => {
+    return removeAnimal(key)
+      .then(() => {
+        this.setState(({ animals }) => {
+          return {
+            animals: animals.filter(animal => animal.key !== key)
+          };
+        });
+      });
   };
 
   render() { 
@@ -18,13 +60,19 @@ class AnimalsContainer extends Component {
       <div>
         <section>
           <h3>Add an Animal</h3>
-          <AnimalForm onComplete={this.handleComplete}/>
+          <AnimalForm onComplete={this.handleAdd}/>
         </section>
 
-        <section>
-          <h3>Animals</h3>
-          <Animals animals={animals}/>
-        </section>
+        {animals && 
+          <section>
+            <h3>Animals</h3>
+            <Animals 
+              animals={animals}
+              onUpdate={this.handleUpdate}
+              onRemove={this.handleRemove}
+            />
+          </section>
+        }
       </div>
     );
   }
