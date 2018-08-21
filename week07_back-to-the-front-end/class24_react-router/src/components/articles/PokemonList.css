@@ -3,6 +3,12 @@
   padding: 0;
   display: grid;
   grid-template-columns: 
-    repeat(auto-fit, minmax(200px, 1fr));
+    repeat(auto-fit, minmax(225px, 1fr));
   grid-gap: 10px;
+  transition: box-shadow 300ms ease-out;
+  
+  > *:hover {
+    box-shadow: 1px 2px 2px steelblue;
+    transform: translateY(-1px);
+  } 
 }

@@ -1,32 +1,39 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import qs from 'query-string';
 
 export default class Paging extends Component {
 
   static propTypes = {
-    page: PropTypes.number,
+    prev: PropTypes.string,
+    next: PropTypes.string,
     perPage: PropTypes.number,
-    totalResults: PropTypes.number,
+    total: PropTypes.number,
     onPage: PropTypes.func.isRequired
   };
 
-  handlePage(increment) {
-    const { page, onPage } = this.props;
-    onPage({ page: page + increment });
+  get page() {
+    const { prev } = this.props;
+    if(!prev) return 1;
+    
+    const { limit, offset = 0 } = qs.parse(prev.split('?')[1]);
+    return (+offset / +limit) + 2;
   }
 
   render() {
-    const { totalResults, page, perPage } = this.props;
-    
-    if(!totalResults) return <div>No results found, try another search</div>;
+    const { prev, next, onPage } = this.props;
+    const { perPage, total } = this.props;
+    const totalPages = Math.ceil(total / perPage);
 
-    const totalPages = Math.ceil(totalResults / perPage);
+
+
+
     return (
       <div>
-        <span>Page {page} of {totalPages}</span>
+        <span>Page {this.page} of {totalPages}</span>
         &nbsp;
-        <button onClick={() => this.handlePage(-1)} disabled={page === 1}>&lt; Prev</button>
-        <button onClick={() => this.handlePage(+1)} disabled={page === totalPages}>Next &gt;</button>
+        <button onClick={() => onPage(prev)} disabled={!prev}>&lt; Prev</button>
+        <button onClick={() => onPage(next)} disabled={!next}>Next &gt;</button>
       </div>
     );
   }
