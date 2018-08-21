@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
-import Home from './home/Home';
+import Home from './Home';
 import AnimalsContainer from './animals/AnimalsContainer';
 import styles from './App.css';
 

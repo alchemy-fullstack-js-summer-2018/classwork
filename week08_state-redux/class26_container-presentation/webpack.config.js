@@ -2,7 +2,7 @@
 const { resolve } = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const buildDir = 'docs';
 const path = resolve(__dirname, buildDir);
@@ -27,7 +27,7 @@ module.exports = {
     // add plugins
     new CleanPlugin(`${path}/bundle.*.js`),
     new HtmlPlugin({ template: './src/index.html' }),
-    new CopyWebpackPlugin([{ from: './src/sprites', to: 'sprites' }])
+    // new CopyWebpackPlugin([{ from: './src/sprites', to: 'sprites' }])
   ],
   module: {
     rules: [

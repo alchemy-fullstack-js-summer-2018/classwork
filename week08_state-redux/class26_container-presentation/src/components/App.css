@@ -1,6 +1,6 @@
 :local(.app) {
   display: grid;
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: 150px 1fr;
   height: 100vh;
   
   main {
