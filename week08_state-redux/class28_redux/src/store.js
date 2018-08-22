@@ -1,8 +1,6 @@
 import { createStore } from 'redux';
-import { count } from './components/demo/reducers';
+import { animals } from './components/animals/reducers';
 
-
-
-const store = createStore(count);
+const store = createStore(animals);
 
 export default store;
