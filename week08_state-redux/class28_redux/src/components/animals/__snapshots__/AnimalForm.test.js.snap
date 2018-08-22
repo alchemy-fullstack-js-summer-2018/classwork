@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Animal Form renders add if no animal prop 1`] = `
+<AnimalForm
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</AnimalForm>
+`;
+
+exports[`Animal Form renders add if no animal prop 2`] = `
+<AnimalForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "name": "felix",
+            "type": "cat",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value="felix"
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value="felix"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      onChange={[Function]}
+      value="cat"
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            onChange={[Function]}
+            required={true}
+            value="cat"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</AnimalForm>
+`;
+
+exports[`Animal Form renders add if no animal prop 3`] = `
+<AnimalForm
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "name": "felix",
+            "type": "cat",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value="felix"
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value="felix"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      onChange={[Function]}
+      value="cat"
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            onChange={[Function]}
+            required={true}
+            value="cat"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Add
+      </button>
+    </p>
+  </form>
+</AnimalForm>
+`;
+
+exports[`Animal Form renders edit if is animal prop 1`] = `
+<AnimalForm
+  animal={
+    Object {
+      "key": "abc",
+      "name": "felix",
+      "type": "calico",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={[MockFunction]}
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value="felix"
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value="felix"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      onChange={[Function]}
+      value="calico"
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            onChange={[Function]}
+            required={true}
+            value="calico"
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</AnimalForm>
+`;
+
+exports[`Animal Form renders edit if is animal prop 2`] = `
+<AnimalForm
+  animal={
+    Object {
+      "key": "abc",
+      "name": "felix",
+      "type": "calico",
+    }
+  }
+  onCancel={[MockFunction]}
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "key": "abc",
+            "name": "felix",
+            "type": "tuxedo",
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": Promise {},
+        },
+      ],
+    }
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <InputControl
+      name="name"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          name
+          :
+          <input
+            name="name"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <InputControl
+      name="type"
+      onChange={[Function]}
+      value=""
+    >
+      <p>
+        <label>
+          type
+          :
+          <input
+            name="type"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+        </label>
+      </p>
+    </InputControl>
+    <p>
+      <button
+        type="submit"
+      >
+        Update
+      </button>
+      <button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </p>
+  </form>
+</AnimalForm>
+`;
