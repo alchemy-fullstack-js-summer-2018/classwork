@@ -41,13 +41,11 @@ describe('Animal Form', () => {
 
     expect(toJSON(wrapper)).toMatchSnapshot();
 
-    // return new Promise(resolve => {
-    //   setTimeout(() => {
-    //     console.log('setTimeout');
-    //     expect(toJSON(wrapper)).toMatchSnapshot();
-    //     resolve();
-    //   }, 20);
-    // });
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
   });
   
   it('renders edit if is animal prop', () => {
@@ -83,9 +81,16 @@ describe('Animal Form', () => {
       type: 'tuxedo'
     });
 
-    wrapper.find('button[type="button"]').simulate('click');
+    return promise
+      .then(() => {
+        wrapper.update();
+        expect(toJSON(wrapper)).toMatchSnapshot();
+      });
+    
+    // wrapper.find('button[type="button"]').simulate('click');
+    // expect(handleCancel.mock.calls.length).toBe(1);
 
-    expect(handleCancel.mock.calls.length).toBe(1);
+    
 
   });
 });
