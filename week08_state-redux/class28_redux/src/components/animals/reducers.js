@@ -13,9 +13,9 @@ export function animals(state = [], { type, payload }) {
         payload
       ];
     case ANIMAL_UPDATE:
-      return state.map(animal => animal.id === payload.id ? payload : animal);
+      return state.map(animal => animal.key === payload.key ? payload : animal);
     case ANIMAL_REMOVE:
-      return state.filter(animal => animal.id !== payload);
+      return state.filter(animal => animal.key !== payload);
     default: 
       return state;
   }

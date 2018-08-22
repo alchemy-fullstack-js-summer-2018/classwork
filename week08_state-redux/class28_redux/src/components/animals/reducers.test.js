@@ -38,11 +38,11 @@ describe('animals reducers', () => {
   });
 
   it('update animal', () => {
-    const animal1 = { id: '1', name: 'a' };
-    const animal2 = { id: '2', name: 'b' };
-    const animal3 = { id: '3', name: 'c' };
+    const animal1 = { key: '1', name: 'a' };
+    const animal2 = { key: '2', name: 'b' };
+    const animal3 = { key: '3', name: 'c' };
 
-    const updated = { id: '2', name: 'f' };
+    const updated = { key: '2', name: 'f' };
 
     const state = animals([animal1, animal2, animal3], { 
       type: ANIMAL_UPDATE,
@@ -57,9 +57,9 @@ describe('animals reducers', () => {
   });
 
   it('remove animal', () => {
-    const animal1 = { id: '1', name: 'a' };
-    const animal2 = { id: '2', name: 'b' };
-    const animal3 = { id: '3', name: 'c' };
+    const animal1 = { key: '1', name: 'a' };
+    const animal2 = { key: '2', name: 'b' };
+    const animal3 = { key: '3', name: 'c' };
 
     const state = animals([animal1, animal2, animal3], { 
       type: ANIMAL_REMOVE,

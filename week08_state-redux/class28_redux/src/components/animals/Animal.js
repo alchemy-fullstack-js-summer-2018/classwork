@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import AnimalDisplay from './AnimalDisplay';
 import AnimalForm from './AnimalForm';
+import { update } from './actions';
 
 class Animal extends Component {
 
@@ -11,22 +13,17 @@ class Animal extends Component {
 
   static propTypes = {
     animal: PropTypes.object.isRequired,
-    onRemove: PropTypes.func.isRequired,
-    onUpdate: PropTypes.func.isRequired
+    update: PropTypes.func.isRequired
   };
 
   handleEdit = () => {
     this.setState({ editing: true });
   };
 
-  handleDelete = () => {
-    const { animal, onRemove } = this.props;
-    return onRemove(animal.key);
-  };
-
   handleComplete = animal => {
-    const { onUpdate } = this.props;
-    return onUpdate(animal).then(this.handleEndEdit);
+    const { update } = this.props;
+    update(animal);
+    this.handleEndEdit();
   };
 
   handleEndEdit = () => {
@@ -56,4 +53,7 @@ class Animal extends Component {
   }
 }
  
-export default Animal;
+export default connect(
+  null,
+  { update }
+)(Animal);

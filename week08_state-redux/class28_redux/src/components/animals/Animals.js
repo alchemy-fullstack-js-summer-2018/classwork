@@ -5,13 +5,11 @@ import Animal from './Animal';
 class Animals extends Component {
   
   static propTypes = {
-    animals: PropTypes.array,
-    onUpdate: PropTypes.func.isRequired,
-    onRemove: PropTypes.func.isRequired
+    animals: PropTypes.array
   };
 
   render() { 
-    const { animals, onUpdate, onRemove } = this.props;
+    const { animals } = this.props;
     
     return (
       <ul>
@@ -19,8 +17,6 @@ class Animals extends Component {
           <Animal 
             key={animal.key} 
             animal={animal}
-            onUpdate={onUpdate}
-            onRemove={onRemove}
           />
         ))}
       </ul>

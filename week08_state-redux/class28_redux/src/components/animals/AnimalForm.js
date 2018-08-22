@@ -29,11 +29,8 @@ class AnimalForm extends Component {
     const animal = { name, type };
     if(key) animal.key = key;
 
-    this.props.onComplete(animal)
-      .then(() => {
-        if(!key) return;
-        this.setState({ name: '', type: '' });
-      });
+    this.props.onComplete(animal);
+    this.setState({ name: '', type: '' });
   };
 
   handleChange = ({ target }) => {

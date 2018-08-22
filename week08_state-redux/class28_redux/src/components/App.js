@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Header from './Header';
 import Home from './Home';
 import Demo from './demo/Demo';
-import AnimalsContainer from './animals/AnimalsContainer';
+import Dashboard from './animals/Dashboard';
 import styles from './App.css';
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/demo" component={Demo}/>
-              <Route exact path="/animals" component={AnimalsContainer}/>
+              <Route exact path="/animals" component={Dashboard}/>
               <Redirect to="/demo"/>
             </Switch>
           </main>

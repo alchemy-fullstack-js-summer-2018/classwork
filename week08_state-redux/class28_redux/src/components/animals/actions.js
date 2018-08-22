@@ -1,14 +1,19 @@
 import { ANIMAL_LOAD, ANIMAL_ADD, ANIMAL_UPDATE, ANIMAL_REMOVE } from './reducers';
+import data from './animals-data';
+import shortid from 'shortid';
 
-export const load = animals => ({
+export const load = () => ({
   type: ANIMAL_LOAD,
-  payload: animals
+  payload: data
 });
 
-export const add = animal => ({
-  type: ANIMAL_ADD,
-  payload: animal
-});
+export const add = animal => {
+  animal.key = shortid.generate();
+  return {
+    type: ANIMAL_ADD,
+    payload: animal
+  };
+};
 
 export const update = animal => ({
   type: ANIMAL_UPDATE,
