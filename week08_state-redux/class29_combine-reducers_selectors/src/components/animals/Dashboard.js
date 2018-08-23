@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Animals from './Animals';
 import AnimalForm from './AnimalForm';
 import { load, add, update } from './actions';
+import { getAnimals } from './reducers';
 
 class AnimalsContainer extends Component {
   
@@ -43,7 +44,7 @@ class AnimalsContainer extends Component {
  
 export default connect(
   state => ({
-    animals: state
+    animals: getAnimals(state)
   }),
   { load, add }
 )(AnimalsContainer);

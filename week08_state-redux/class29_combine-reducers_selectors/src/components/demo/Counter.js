@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { increment, decrement } from './actions';
+import { getCount } from './reducers';
 
 class Counter extends PureComponent {
   static propTypes = {
@@ -26,7 +27,7 @@ class Counter extends PureComponent {
 export default connect(
   // mapStateToProps
   state => ({
-    count: state
+    count: getCount(state)
   }),
   // mapDispatchToProps
   { increment, decrement }

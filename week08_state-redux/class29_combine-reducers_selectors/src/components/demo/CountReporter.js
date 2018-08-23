@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { getCount } from './reducers';
 
 class CountReporter extends PureComponent {
   static propTypes = {
@@ -17,6 +18,8 @@ class CountReporter extends PureComponent {
 }
  
 export default connect(
-  state => ({ count: state }),
+  state => ({ 
+    count: getCount(state)
+  }),
   null
 )(CountReporter);

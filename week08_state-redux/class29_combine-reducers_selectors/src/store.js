@@ -1,12 +1,14 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { animals } from './components/animals/reducers';
-// switch to this import to run counter demo
-// import { count } from './components/demo/reducers';
+import { count } from './components/demo/reducers';
+
+const rootReducer = combineReducers({
+  animals,
+  count
+});
 
 const store = createStore(
-  animals,
-  // switch for counter demo
-  // count,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

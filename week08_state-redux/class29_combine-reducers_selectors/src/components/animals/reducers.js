@@ -3,6 +3,8 @@ export const ANIMAL_ADD = 'ANIMAL_ADD';
 export const ANIMAL_UPDATE = 'ANIMAL_UPDATE';
 export const ANIMAL_REMOVE = 'ANIMAL_REMOVE';
 
+export const getAnimals = state => state.animals;
+
 export function animals(state = [], { type, payload }) {
   switch(type) {
     case ANIMAL_LOAD:
