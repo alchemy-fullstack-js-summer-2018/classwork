@@ -5,7 +5,7 @@ import AnimalDisplay from './AnimalDisplay';
 import AnimalForm from './AnimalForm';
 import { update } from './actions';
 
-class Animal extends Component {
+export class Animal extends Component {
 
   state = {
     editing: false
@@ -22,8 +22,8 @@ class Animal extends Component {
 
   handleComplete = animal => {
     const { update } = this.props;
-    update(animal);
-    this.handleEndEdit();
+    return update(animal)
+      .then(() => this.handleEndEdit());
   };
 
   handleEndEdit = () => {
@@ -45,7 +45,6 @@ class Animal extends Component {
           : <AnimalDisplay
             animal={animal}
             onEdit={this.handleEdit}
-            onDelete={this.handleDelete}
           />
         }
       </li>

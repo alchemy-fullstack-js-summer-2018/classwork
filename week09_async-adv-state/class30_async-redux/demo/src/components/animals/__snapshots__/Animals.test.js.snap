@@ -2,7 +2,7 @@
 
 exports[`Animals renders add if no animal prop 1`] = `
 <ul>
-  <Animal
+  <Connect(Animal)
     animal={
       Object {
         "key": "abc",
@@ -11,10 +11,8 @@ exports[`Animals renders add if no animal prop 1`] = `
       }
     }
     key="abc"
-    onRemove={[MockFunction]}
-    onUpdate={[MockFunction]}
   />
-  <Animal
+  <Connect(Animal)
     animal={
       Object {
         "key": "def",
@@ -23,10 +21,8 @@ exports[`Animals renders add if no animal prop 1`] = `
       }
     }
     key="def"
-    onRemove={[MockFunction]}
-    onUpdate={[MockFunction]}
   />
-  <Animal
+  <Connect(Animal)
     animal={
       Object {
         "key": "ghi",
@@ -35,8 +31,6 @@ exports[`Animals renders add if no animal prop 1`] = `
       }
     }
     key="ghi"
-    onRemove={[MockFunction]}
-    onUpdate={[MockFunction]}
   />
 </ul>
 `;

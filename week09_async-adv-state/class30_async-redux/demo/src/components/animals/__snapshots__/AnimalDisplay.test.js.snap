@@ -12,8 +12,8 @@ exports[`Animal Display renders display, then edit 1`] = `
     ✎
   </button>
   <button
-    name="delete"
-    onClick={[MockFunction]}
+    name="remove"
+    onClick={[Function]}
   >
     🗑
   </button>

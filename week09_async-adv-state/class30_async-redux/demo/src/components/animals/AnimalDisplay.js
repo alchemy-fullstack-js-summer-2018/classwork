@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { remove } from './actions';
 
-class AnimalDisplay extends Component {
+export class AnimalDisplay extends Component {
   static propTypes = {
     animal: PropTypes.object.isRequired,
     onEdit: PropTypes.func.isRequired,
@@ -17,7 +17,7 @@ class AnimalDisplay extends Component {
       <p>
         {animal.name} the {animal.type}
         <button name="edit" onClick={onEdit}>✎</button>
-        <button name="delete" onClick={() => remove(animal.key)}>🗑</button>
+        <button name="remove" onClick={() => remove(animal.key)}>🗑</button>
       </p>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Animals from './Animals';
+import { Animals } from './Animals';
 import toJSON from 'enzyme-to-json';
 
 describe('Animals', () => {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+// import { connect }
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import Error from './Error';
+import logo from '../../assets/logo.png';
 import styles from './Header.css';
 
 class Header extends Component {
@@ -27,9 +29,6 @@ class Header extends Component {
           <nav>
             <ul>
               <li>
-                <NavLink exact activeClassName="active" to="/demo">Redux Demo</NavLink>
-              </li>
-              <li>
                 <NavLink exact activeClassName="active" to="/">Home</NavLink>
               </li>
               <li>
@@ -40,6 +39,7 @@ class Header extends Component {
           </nav>
         </section>
       
+        <Error/>
       </div>
     );
   }

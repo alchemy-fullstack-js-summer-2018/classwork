@@ -152,7 +152,7 @@ exports[`Animal Form renders add if no animal prop 3`] = `
     <InputControl
       name="name"
       onChange={[Function]}
-      value="felix"
+      value=""
     >
       <p>
         <label>
@@ -162,7 +162,7 @@ exports[`Animal Form renders add if no animal prop 3`] = `
             name="name"
             onChange={[Function]}
             required={true}
-            value="felix"
+            value=""
           />
         </label>
       </p>
@@ -170,7 +170,7 @@ exports[`Animal Form renders add if no animal prop 3`] = `
     <InputControl
       name="type"
       onChange={[Function]}
-      value="cat"
+      value=""
     >
       <p>
         <label>
@@ -180,7 +180,7 @@ exports[`Animal Form renders add if no animal prop 3`] = `
             name="type"
             onChange={[Function]}
             required={true}
-            value="cat"
+            value=""
           />
         </label>
       </p>

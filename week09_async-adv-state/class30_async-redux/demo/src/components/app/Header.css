@@ -1,4 +1,5 @@
 :local(.header) {
+  position: relative;
   background: lightsteelblue;
   padding: 10px;
 

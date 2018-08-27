@@ -5,7 +5,7 @@ const ANIMALS_URL = `${URL}/animals`;
 
 const getAnimalUrl = key => `${ANIMALS_URL}/${key}.json`;
 
-export const getAnimals = () => {
+export const loadAnimals = () => {
   return get(`${ANIMALS_URL}.json`)
     .then(response => {
       return response
@@ -19,6 +19,10 @@ export const getAnimals = () => {
 };
 
 export const addAnimal =  (animal) => {
+  if(animal.name === 'fluffy') {
+    return Promise.reject('oh pls, try harder...');
+  }
+
   const url = `${ANIMALS_URL}.json`;
   return post(url, animal)
     .then(res => {
@@ -28,8 +32,10 @@ export const addAnimal =  (animal) => {
 };
 
 export const updateAnimal = animal => {
+  // eslint-disable-next-line
+  const { key, ...copy } = animal;
   const url = getAnimalUrl(animal.key);
-  return put(url, animal);
+  return put(url, copy);
 };
 
 export const removeAnimal = id => {

@@ -18,14 +18,19 @@ class AnimalsContainer extends Component {
     this.props.load();
   }
 
+  handleComplete = (animal) => {
+    const { add } = this.props;
+    return add(animal);
+  };
+
   render() { 
-    const { animals, add } = this.props;
+    const { animals } = this.props;
     
     return (
       <div>
         <section>
           <h3>Add an Animal</h3>
-          <AnimalForm onComplete={add}/>
+          <AnimalForm onComplete={this.handleComplete}/>
         </section>
 
         {animals && 

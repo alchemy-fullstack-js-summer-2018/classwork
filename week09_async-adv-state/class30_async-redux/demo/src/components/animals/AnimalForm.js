@@ -29,8 +29,18 @@ class AnimalForm extends Component {
     const animal = { name, type };
     if(key) animal.key = key;
 
-    this.props.onComplete(animal);
-    this.setState({ name: '', type: '' });
+    const { onComplete, animal: originalAnimal } = this.props;
+
+    onComplete(animal)
+      .then(() => {
+        if(!originalAnimal) {
+          this.setState({ name: '', type: '' });
+          document.activeElement.blur();
+        }
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
   };
 
   handleChange = ({ target }) => {

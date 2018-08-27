@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
-import Demo from './demo/Demo';
-import Dashboard from './animals/Dashboard';
+import Dashboard from '../animals/Dashboard';
 import styles from './App.css';
 
 class App extends Component {
-
 
   render() {
 
@@ -21,7 +19,6 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route exact path="/demo" component={Demo}/>
               <Route exact path="/animals" component={Dashboard}/>
               <Redirect to="/demo"/>
             </Switch>

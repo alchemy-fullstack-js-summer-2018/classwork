@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Animal from './Animal';
 
-class Animals extends Component {
+export class Animals extends Component {
   
   static propTypes = {
     animals: PropTypes.array

@@ -1,26 +1,22 @@
 import { ANIMAL_LOAD, ANIMAL_ADD, ANIMAL_UPDATE, ANIMAL_REMOVE } from './reducers';
-import data from './animals-data';
-import shortid from 'shortid';
+import { loadAnimals, addAnimal, updateAnimal, removeAnimal } from '../../services/animalsApi';
 
 export const load = () => ({
   type: ANIMAL_LOAD,
-  payload: data
+  payload: loadAnimals()
 });
 
-export const add = animal => {
-  animal.key = shortid.generate();
-  return {
-    type: ANIMAL_ADD,
-    payload: animal
-  };
-};
+export const add = animal => ({
+  type: ANIMAL_ADD,
+  payload: addAnimal(animal)
+});
 
 export const update = animal => ({
   type: ANIMAL_UPDATE,
-  payload: animal
+  payload: updateAnimal(animal)
 });
 
 export const remove = id => ({
   type: ANIMAL_REMOVE,
-  payload: id
+  payload: removeAnimal(id).then(() => id)
 });

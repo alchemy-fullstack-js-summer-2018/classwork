@@ -1,6 +1,6 @@
-import Animal from './Animal';
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Animal } from './Animal';
 
 describe('Animal', () => {
   
@@ -12,7 +12,7 @@ describe('Animal', () => {
     const wrapper = shallow(<Animal 
       animal={animal}
       onRemove={handleRemove}
-      onUpdate={handleUpdate}
+      update={handleUpdate}
     />);
 
     const component = wrapper.instance();
@@ -22,12 +22,6 @@ describe('Animal', () => {
     expect(wrapper.state('editing')).toBe(true);
     component.handleEndEdit();
     expect(wrapper.state('editing')).toBe(false);
-
-    component.handleDelete();
-
-    const removeCalls = handleRemove.mock.calls;
-    expect(removeCalls.length).toBe(1); // only called once
-    expect(removeCalls[0][0]).toBe(animal.key);
 
   });
 });
