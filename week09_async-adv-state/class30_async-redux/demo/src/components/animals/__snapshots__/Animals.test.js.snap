@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Animals renders add if no animal prop 1`] = `
+<ul>
+  <Animal
+    animal={
+      Object {
+        "key": "abc",
+        "name": "felix",
+        "type": "cat",
+      }
+    }
+    key="abc"
+    onRemove={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />
+  <Animal
+    animal={
+      Object {
+        "key": "def",
+        "name": "garfield",
+        "type": "cat",
+      }
+    }
+    key="def"
+    onRemove={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />
+  <Animal
+    animal={
+      Object {
+        "key": "ghi",
+        "name": "lassie",
+        "type": "dog",
+      }
+    }
+    key="ghi"
+    onRemove={[MockFunction]}
+    onUpdate={[MockFunction]}
+  />
+</ul>
+`;
