@@ -5,16 +5,24 @@ const ANIMALS_URL = `${URL}/animals`;
 
 const getAnimalUrl = key => `${ANIMALS_URL}/${key}.json`;
 
+const pivot = obj => {
+  if(!obj) return [];
+
+  return Object.keys(obj).map(key => {
+    const each = obj[key];
+    each.key = key;
+    return each;
+  });
+};
+
 export const loadAnimals = () => {
   return get(`${ANIMALS_URL}.json`)
     .then(response => {
-      return response
-        ? Object.keys(response).map(key => {
-          const each = response[key];
-          each.key = key;
-          return each;
-        })
-        : [];
+      const animals = pivot(response);
+      animals.forEach(animal => {
+        animal.toys = pivot(animal.toys);
+      });
+      return animals;
     });
 };
 
