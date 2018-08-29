@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { getUser, getGames } from './reducers';
 import { requestGame } from './actions';
 
-class Home extends Component {
+export class Home extends Component {
   
   static propTypes = {
     user: PropTypes.object,
@@ -19,23 +19,12 @@ class Home extends Component {
     return (
       <div>
         <h2>Play Rock Paper Scissors in Real Time</h2>
-        {
-          user && <section>
-            <button onClick={requestGame}>Play Game</button>
-            <ul>
-              {games.map((gameKey, i) => (
-                <li key={gameKey}>
-                  <Link to={`/games/${gameKey}`}>Game {i + 1}</Link>
-                </li>
-              ))}
-            </ul>
-          </section> 
-        }
+        {user && <UserGames games={games} onRequest={requestGame}/>}
       </div>
     );
   }
 }
- 
+
 export default connect(
   state => ({
     user: getUser(state),
@@ -43,3 +32,24 @@ export default connect(
   }),
   { requestGame }
 )(Home);
+
+export const UserGames = ({ onRequest, games }) => {
+  return (
+    <section>
+      <button onClick={onRequest}>Play Game</button>
+      <ul>
+        {games.map((gameKey, i) => (
+          <li key={gameKey}>
+            <Link to={`/games/${gameKey}`}>Game {i + 1}</Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+UserGames.propTypes = {
+  games: PropTypes.array.isRequired,
+  onRequest: PropTypes.func.isRequired
+};
+ 

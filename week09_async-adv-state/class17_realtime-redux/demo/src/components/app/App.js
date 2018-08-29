@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { login } from './actions';
 import Header from './Header';
 import Home from './Home';
+import Game from '../game/Game';
 import styles from './App.css';
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" component={Home}/>
+              <Route exact path="/games/:gameKey" component={Game}/>
               <Redirect to="/"/>
             </Switch>
           </main>

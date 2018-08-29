@@ -33,14 +33,16 @@ export const login = () => {
   };
 };
 
-export const watchGames = uid => {
-  
-}
-
 export const requestGame = () => {
   return (dispatch, getState) => {
     const user = getUser(getState());
-    playersRef.child(user.uid).set(true)
-      .catch(console.log);
+    playersRef.child(user.uid)
+      .set(true)
+      .catch(err => {
+        dispatch({
+          type: ERROR,
+          payload: err.message
+        });
+      });
   };
 };
