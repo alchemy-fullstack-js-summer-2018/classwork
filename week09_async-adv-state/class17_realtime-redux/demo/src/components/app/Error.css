@@ -1,0 +1,11 @@
+:local(.error) {
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  color: white;
+  background: red;
+  opacity: .7;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+body {
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  color: rgb(26, 13, 65);
+  margin: 0;
+}
+
+main {
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
