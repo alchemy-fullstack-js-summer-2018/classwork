@@ -1,0 +1,21 @@
+:local(.add-ship) {
+
+  border: 1px solid #aaa;
+  padding: 5px;
+  
+  form {
+    > div {
+      margin: 5px 0;
+    }
+
+    label {
+      
+      > div {
+        font-weight: bolder;
+        padding-top: 4px;
+        padding-bottom: 2px;
+      }
+    }
+  }
+
+}
