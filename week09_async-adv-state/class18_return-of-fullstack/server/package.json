@@ -1,0 +1,47 @@
+{
+  "name": "reference-backend",
+  "version": "1.0.0",
+  "description": "Reference Backend Server ===",
+  "main": "index.js",
+  "engines": {
+    "node": "8.x"
+  },
+  "scripts": {
+    "lint": "eslint lib test",
+    "pretest": "npm run lint",
+    "test:mocha": "mocha  --recursive",
+    "test": "npm run test:mocha",
+    "test:unit": "mocha test/unit",
+    "test:e2e": "mocha test/e2e",
+    "test:watch": "nodemon --exec 'npm run test:mocha'",
+    "test:e2e:watch": "nodemon --exec 'npm run test:e2e'",
+    "test:unit:watch": "nodemon --exec 'npm run test:unit'",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemy-fullstack-js-spring-2018/reference-backend.git"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alchemy-fullstack-js-spring-2018/reference-backend/issues"
+  },
+  "homepage": "https://github.com/alchemy-fullstack-js-spring-2018/reference-backend#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.0",
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.12",
+    "morgan": "^1.9.0"
+  }
+}
