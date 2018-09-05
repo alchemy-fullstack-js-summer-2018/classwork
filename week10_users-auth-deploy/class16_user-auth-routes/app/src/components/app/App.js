@@ -5,6 +5,7 @@ import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
 import { tryLoadUser } from '../auth/actions';
 import { getCheckedAuth } from '../auth/reducers';
+import Home from './Home';
 import Header from './Header';
 import Auth from '../auth/Auth';
 import PetList from '../pets/PetList';
@@ -33,7 +34,7 @@ class App extends PureComponent {
           <main className={styles.app}>
             { checkedAuth && 
             <Switch>
-              <Route exact path="/" render={() => <h2>I am Home</h2>}/>
+              <Route exact path="/" component={Home}/>
               <Route path="/auth" component={Auth}/>
               <PrivateRoute exact path="/pets" component={PetList}/>
               <PrivateRoute path="/pets/new" component={AddPet}/>
