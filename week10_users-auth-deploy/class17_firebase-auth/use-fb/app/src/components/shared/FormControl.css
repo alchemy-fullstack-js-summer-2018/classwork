@@ -1,0 +1,13 @@
+:local(.form-control) {
+
+  margin: 15px 0;
+
+  label {
+    display: block;
+    font-weight: bolder;
+  }
+  
+  .control {
+    padding: 10px 0;
+  }
+}

@@ -1,0 +1,5 @@
+node_modules
+firebase-adminsdk-service-key.json
+.env
+.DS_Store
+.vs*
