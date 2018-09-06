@@ -1,3 +1,17 @@
 :local(.header) {
-  
+    grid-area: header;
+    border: 1px solid red;
+    nav {
+        display: flex;
+        justify-content: space-around;
+        a { 
+            background: lime;
+            width: 100%;
+            text-align: center;
+            border: 2px solid olive;
+        }
+    }
+    h1 {
+        margin: 0;
+    }
 }

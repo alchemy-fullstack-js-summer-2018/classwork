@@ -12,8 +12,8 @@ class App extends PureComponent {
 
     return (
       <Router>
-        <div>
-          <Header/>
+        <div className="page-container">
+          <Header />
           <main className={styles.app}>
             <Switch>
               <Route exact path="/" component={Home}/>
@@ -21,6 +21,12 @@ class App extends PureComponent {
               <Redirect to="/"/>
             </Switch>
           </main>
+          <aside>
+            SIDEBAR BANANAS YAY
+          </aside>
+          <footer>
+            banana feet
+          </footer>
         </div>
       </Router>
     );

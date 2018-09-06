@@ -11,8 +11,10 @@ class Header extends Component {
         <h1>Some App</h1>
         <nav>
           <Link to="/">Home</Link>
-          &nbsp;
           <Link to="/whatever">Whatever</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/another">Another</Link>
         </nav>
       </header>
     );
